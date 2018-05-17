@@ -12,12 +12,12 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component
  *
  * @Route("admin/player")
  */
-class AdminPlayerController extends Controller
+class PlayerController extends Controller
 {
     /**
      * Lists all player entities.
      *
-     * @Route("/", name="player_index")
+     * @Route("/", name="admin_player_index")
      * @Method("GET")
      */
     public function indexAction()
@@ -34,7 +34,7 @@ class AdminPlayerController extends Controller
     /**
      * Creates a new player entity.
      *
-     * @Route("/new", name="player_new")
+     * @Route("/new", name="admin_player_new")
      * @Method({"GET", "POST"})
      */
     public function newAction(Request $request)
@@ -48,7 +48,7 @@ class AdminPlayerController extends Controller
             $em->persist($player);
             $em->flush();
 
-            return $this->redirectToRoute('player_show', array('id' => $player->getId()));
+            return $this->redirectToRoute('admin_player_show', array('id' => $player->getId()));
         }
 
         return $this->render('player/new.html.twig', array(
@@ -60,7 +60,7 @@ class AdminPlayerController extends Controller
     /**
      * Finds and displays a player entity.
      *
-     * @Route("/{id}", name="player_show")
+     * @Route("/{id}", name="admin_player_show")
      * @Method("GET")
      */
     public function showAction(Player $player)
@@ -76,7 +76,7 @@ class AdminPlayerController extends Controller
     /**
      * Displays a form to edit an existing player entity.
      *
-     * @Route("/{id}/edit", name="player_edit")
+     * @Route("/{id}/edit", name="admin_player_edit")
      * @Method({"GET", "POST"})
      */
     public function editAction(Request $request, Player $player)
@@ -88,7 +88,7 @@ class AdminPlayerController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('player_edit', array('id' => $player->getId()));
+            return $this->redirectToRoute('admin_player_edit', array('id' => $player->getId()));
         }
 
         return $this->render('player/edit.html.twig', array(
@@ -101,7 +101,7 @@ class AdminPlayerController extends Controller
     /**
      * Deletes a player entity.
      *
-     * @Route("/{id}", name="player_delete")
+     * @Route("/{id}", name="admin_player_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, Player $player)
@@ -115,7 +115,7 @@ class AdminPlayerController extends Controller
             $em->flush();
         }
 
-        return $this->redirectToRoute('player_index');
+        return $this->redirectToRoute('admin_player_index');
     }
 
     /**
@@ -128,7 +128,7 @@ class AdminPlayerController extends Controller
     private function createDeleteForm(Player $player)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('player_delete', array('id' => $player->getId())))
+            ->setAction($this->generateUrl('admin_player_delete', array('id' => $player->getId())))
             ->setMethod('DELETE')
             ->getForm()
         ;

@@ -10,14 +10,14 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component
 /**
  * Game controller.
  *
- * @Route("/admin/game")
+ * @Route("admin/game")
  */
 class GameController extends Controller
 {
     /**
      * Lists all game entities.
      *
-     * @Route("/", name="game_index")
+     * @Route("/", name="admin_game_index")
      * @Method("GET")
      */
     public function indexAction()
@@ -34,7 +34,7 @@ class GameController extends Controller
     /**
      * Creates a new game entity.
      *
-     * @Route("/new", name="game_new")
+     * @Route("/new", name="admin_game_new")
      * @Method({"GET", "POST"})
      */
     public function newAction(Request $request)
@@ -48,7 +48,7 @@ class GameController extends Controller
             $em->persist($game);
             $em->flush();
 
-            return $this->redirectToRoute('game_show', array('id' => $game->getId()));
+            return $this->redirectToRoute('admin_game_show', array('id' => $game->getId()));
         }
 
         return $this->render('game/new.html.twig', array(
@@ -60,7 +60,7 @@ class GameController extends Controller
     /**
      * Finds and displays a game entity.
      *
-     * @Route("/{id}", name="game_show")
+     * @Route("/{id}", name="admin_game_show")
      * @Method("GET")
      */
     public function showAction(Game $game)
@@ -76,7 +76,7 @@ class GameController extends Controller
     /**
      * Displays a form to edit an existing game entity.
      *
-     * @Route("/{id}/edit", name="game_edit")
+     * @Route("/{id}/edit", name="admin_game_edit")
      * @Method({"GET", "POST"})
      */
     public function editAction(Request $request, Game $game)
@@ -88,7 +88,7 @@ class GameController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('game_edit', array('id' => $game->getId()));
+            return $this->redirectToRoute('admin_game_edit', array('id' => $game->getId()));
         }
 
         return $this->render('game/edit.html.twig', array(
@@ -101,7 +101,7 @@ class GameController extends Controller
     /**
      * Deletes a game entity.
      *
-     * @Route("/{id}", name="game_delete")
+     * @Route("/{id}", name="admin_game_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, Game $game)
@@ -115,7 +115,7 @@ class GameController extends Controller
             $em->flush();
         }
 
-        return $this->redirectToRoute('game_index');
+        return $this->redirectToRoute('admin_game_index');
     }
 
     /**
@@ -128,7 +128,7 @@ class GameController extends Controller
     private function createDeleteForm(Game $game)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('game_delete', array('id' => $game->getId())))
+            ->setAction($this->generateUrl('admin_game_delete', array('id' => $game->getId())))
             ->setMethod('DELETE')
             ->getForm()
         ;

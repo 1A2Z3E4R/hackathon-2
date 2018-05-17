@@ -20,7 +20,7 @@
         <tbody>
         {% for game in games %}
             <tr>
-                <td><a href="{{ path('game_show', { 'id': game.id }) }}">{{ game.id }}</a></td>
+                <td><a href="{{ path('admin_game_show', { 'id': game.id }) }}">{{ game.id }}</a></td>
                 <td>{{ game.team1 }}</td>
                 <td>{{ game.team2 }}</td>
                 <td>{{ game.score1 }}</td>
@@ -31,10 +31,10 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('game_show', { 'id': game.id }) }}">show</a>
+                            <a href="{{ path('admin_game_show', { 'id': game.id }) }}">show</a>
                         </li>
                         <li>
-                            <a href="{{ path('game_edit', { 'id': game.id }) }}">edit</a>
+                            <a href="{{ path('admin_game_edit', { 'id': game.id }) }}">edit</a>
                         </li>
                     </ul>
                 </td>
@@ -45,7 +45,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('game_new') }}">Create a new game</a>
+            <a href="{{ path('admin_game_new') }}">Create a new game</a>
         </li>
     </ul>
 {% endblock %}

@@ -16,17 +16,17 @@
         <tbody>
         {% for player in players %}
             <tr>
-                <td><a href="{{ path('player_show', { 'id': player.id }) }}">{{ player.id }}</a></td>
+                <td><a href="{{ path('admin_player_show', { 'id': player.id }) }}">{{ player.id }}</a></td>
                 <td>{{ player.firstName }}</td>
                 <td>{{ player.lastName }}</td>
                 <td>{{ player.avatar }}</td>
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('player_show', { 'id': player.id }) }}">show</a>
+                            <a href="{{ path('admin_player_show', { 'id': player.id }) }}">show</a>
                         </li>
                         <li>
-                            <a href="{{ path('player_edit', { 'id': player.id }) }}">edit</a>
+                            <a href="{{ path('admin_player_edit', { 'id': player.id }) }}">edit</a>
                         </li>
                     </ul>
                 </td>
@@ -37,7 +37,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('player_new') }}">Create a new player</a>
+            <a href="{{ path('admin_player_new') }}">Create a new player</a>
         </li>
     </ul>
 {% endblock %}

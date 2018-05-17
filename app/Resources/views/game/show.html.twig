@@ -42,10 +42,10 @@
 
     <ul>
         <li>
-            <a href="{{ path('game_index') }}">Back to the list</a>
+            <a href="{{ path('admin_game_index') }}">Back to the list</a>
         </li>
         <li>
-            <a href="{{ path('game_edit', { 'id': game.id }) }}">Edit</a>
+            <a href="{{ path('admin_game_edit', { 'id': game.id }) }}">Edit</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
