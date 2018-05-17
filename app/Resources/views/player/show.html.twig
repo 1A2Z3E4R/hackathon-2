@@ -26,15 +26,10 @@
 
     <ul>
         <li>
-            <a href="{{ path('admin_player_index') }}">Back to the list</a>
+            <a href="{{ path('player_index') }}">Back to the list</a>
         </li>
         <li>
-            <a href="{{ path('admin_player_edit', { 'id': player.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
+            <a href="{{ path('player_edit', { 'id': player.id }) }}">Edit</a>
         </li>
     </ul>
 {% endblock %}
