@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Controller;
+namespace AppBundle\Controller\Admin;
 
 use AppBundle\Entity\Game;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
