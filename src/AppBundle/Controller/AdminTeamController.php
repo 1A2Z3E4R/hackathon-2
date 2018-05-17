@@ -10,9 +10,9 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component
 /**
  * Team controller.
  *
- * @Route("team")
+ * @Route("admin/team")
  */
-class TeamController extends Controller
+class AdminTeamController extends Controller
 {
     /**
      * Lists all team entities.
