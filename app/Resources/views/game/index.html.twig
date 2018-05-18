@@ -1,14 +1,17 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Games list</h1>
-
-    <table>
+<div class="admin">
+    <div class="row">
+        <h1 class="my-3 mx-auto">Games list</h1>
+    </div>
+    <button class="btn btn-outline-secondary my-3 mx-1" href="{{ path('admin_game_new') }}">Create a new game</button>
+    <table  class="table-striped table-hover table-sm">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Score1</th>
-                <th>Score2</th>
+                <th>Score 1</th>
+                <th>Score 2</th>
                 <th>Winner</th>
                 <th>Posline</th>
                 <th>Poscol</th>
@@ -25,23 +28,20 @@
                 <td>{{ game.posLine }}</td>
                 <td>{{ game.posCol }}</td>
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('admin_game_show', { 'id': game.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('admin_game_edit', { 'id': game.id }) }}">edit</a>
-                        </li>
-                    </ul>
+                    <div class="row">
+                        <div class="col-4">
+                            <a class="btn btn-outline-secondary my-1 p-1"
+                               href="{{ path('admin_game_show', { 'id': game.id }) }}">show</a>
+                        </div>
+                        <div class="col-6">
+                            <a class="btn btn-outline-secondary my-1 p-1"
+                               href="{{ path('admin_game_edit', { 'id': game.id }) }}">edit</a>
+                        </div>
+                    </div>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('admin_game_new') }}">Create a new game</a>
-        </li>
-    </ul>
 {% endblock %}

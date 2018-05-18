@@ -227,23 +227,32 @@ $heightCell : 80px;
   }
 }
 
-.team {
+.admin {
   font-family: $catamaran;
   font-size: 1.2rem;
   th {
     font-size: 1.6rem;
   }
   a {
-    width: 80px;
+    width: 180px;
+    height: 40px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    &:hover {
+      color: $jaune;
+    }
+
+  }
+  button {
+    width: 180px;
     height: 40px;
     font-size: 1.2rem;
     &:hover {
       color: $jaune;
       font-style: unset;
     }
-
   }
-  button {
+  input {
     width: 180px;
     height: 40px;
     font-size: 1.2rem;

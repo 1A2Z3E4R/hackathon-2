@@ -1,10 +1,14 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Team</h1>
+    <div class="admin">
+        <div class="row">
+            <h1 class="my-3 mx-auto">Team</h1>
+        </div>
 
-    <table>
-        <tbody>
+
+        <table class="table-striped table-hover table-sm">
+            <tbody>
             <tr>
                 <th>Id</th>
                 <td>{{ team.id }}</td>
@@ -17,20 +21,13 @@
                 <th>Country</th>
                 <td>{{ team.country }}</td>
             </tr>
-        </tbody>
-    </table>
+            </tbody>
+        </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('admin_team_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('admin_team_edit', { 'id': team.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+        <a class="btn btn-outline-secondary mx-2 my-2" href="{{ path('admin_team_index') }}">Back to the list</a>
+        <a class="btn btn-outline-secondary mx-2 my-2" href="{{ path('admin_team_edit', { 'id': team.id }) }}">Edit</a>
+        {{ form_start(delete_form) }}
+        <input type="submit" value="Delete" class="btn btn-outline-secondary mx-2 my-2">
+        {{ form_end(delete_form) }}
+    </div>
 {% endblock %}
