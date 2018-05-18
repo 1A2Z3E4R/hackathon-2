@@ -136,63 +136,67 @@ $heightCell : 80px;
     width: 60px;
   }
 
-  table{
-    @extend .table,.table-borderless;
+  table {
+    @extend .table, .table-borderless;
   }
 
-   td{
-     vertical-align: middle;
-     text-align:center;
-   }
+  td {
+    vertical-align: middle;
+    text-align: center;
+  }
 
-  .content-game{
-    width:250px;
-    display:inline-block;
+  .content-game {
+    width: 250px;
+    display: inline-block;
 
   }
 
-  .submit{
-    width:75px;
-    display:inline-block;
+  .submit {
+    width: 75px;
+    display: inline-block;
   }
-  .content{
+  .content {
     display: flex;
     flex-direction: column;
     justify-content: center;
-   /* align-items: center;*/
-    min-height:$heightTournament;
+    /* align-items: center;*/
+    min-height: $heightTournament;
   }
   .game {
-    border:1px solid black;
+    border: 1px solid black;
     border-radius: 8px;
-    margin:auto auto;
-    min-width:$widthGame;
+    margin: auto auto;
+    min-width: $widthGame;
 
+    .team {
+      border: 1px solid black;
 
-    .team{
-      border:1px solid black;
-
-      table.teamTab{
-        margin:0;
-        padding:0;
-        tr{
-          height:$heightCell;
+      table.teamTab {
+        margin: 0;
+        padding: 0;
+        tr {
+          height: $heightCell;
         }
-        .td{
+        .td {
         }
       }
-      .teamName{
-        border:1px solid black;
+      .teamName {
+        border: 1px solid black;
         vertical-align: middle;
 
       }
-      .score{
-        width:20%;
-        border:1px solid black;
+      .score {
+        width: 20%;
+        border: 1px solid black;
         vertical-align: middle;
 
       }
     }
   }
+}
 
+#login-form {
+  font-family: $catamaran;
+  width: 400px;
+  background-color: $bleu-vert;
 }
