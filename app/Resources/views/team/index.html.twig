@@ -13,18 +13,18 @@
             </tr>
         </thead>
         <tbody>
-        {% for team in teams %}
+        {% for tab in tabs %}
             <tr>
-                <td><a href="{{ path('admin_team_show', { 'id': team.id }) }}">{{ team.id }}</a></td>
-                <td>{{ team.name }}</td>
-                <td><img src="http://www.countryflags.io/{{ team.country }}/flat/64.png"></td>
+                <td><a href="{{ path('admin_team_show', { 'id': tab.team.id }) }}">{{ tab.team.id }}</a></td>
+                <td>{{ tab.team.name }}</td>
+                <td><img src="http://www.countryflags.io/{{ tab.team.country }}/flat/64.png">{{ tab.country }}</td>
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('admin_team_show', { 'id': team.id }) }}">show</a>
+                            <a href="{{ path('admin_team_show', { 'id': tab.team.id }) }}">show</a>
                         </li>
                         <li>
-                            <a href="{{ path('admin_team_edit', { 'id': team.id }) }}">edit</a>
+                            <a href="{{ path('admin_team_edit', { 'id': tab.team.id }) }}">edit</a>
                         </li>
                     </ul>
                 </td>
