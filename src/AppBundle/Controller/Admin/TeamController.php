@@ -27,7 +27,7 @@ class TeamController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $teams = $em->getRepository('AppBundle:Team')->findAll();
-        $teams = $em->getRepository('AppBundle:Team')->findAll();
+        $tab = array();
         foreach ($teams as $key =>  $team) {
             $tab[$key]['team']=$team;
             $tab[$key]['country']=Intl::getRegionBundle()->getCountryName($team->getCountry());
