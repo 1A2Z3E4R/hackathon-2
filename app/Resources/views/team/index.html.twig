@@ -14,32 +14,28 @@
                 <th>Country</th>
                 <th>Actions</th>
             </tr>
-            </thead>
-            <tbody>
-            {% for team in teams %}
-                <tr>
-                    <td class="m-auto p-auto"><a class="btn"
-                                                 href="{{ path('admin_team_show', { 'id': team.id }) }}">{{ team.id }}</a>
-                    </td>
-                    <td class="m-auto p-auto">{{ team.name }}</td>
-                    <td class="m-auto p-auto">{{ team.country }}</td>
-                    <td>
-                        <div class="row">
-                            <div class="col-4">
-                                <a class="btn btn-outline-secondary my-1 p-1"
-                                   href="{{ path('admin_team_show', { 'id': team.id }) }}">show</a>
-                            </div>
-                            <div class="col-6">
-                                <a class="btn btn-outline-secondary my-1 p-1"
-                                   href="{{ path('admin_team_edit', { 'id': team.id }) }}">edit</a>
-                            </div>
-                        </div>
+        </thead>
+        <tbody>
+        {% for tab in tabs %}
+            <tr>
+                <td><a href="{{ path('admin_team_show', { 'id': tab.team.id }) }}">{{ tab.team.id }}</a></td>
+                <td>{{ tab.team.name }}</td>
+                <td><img src="http://www.countryflags.io/{{ tab.team.country }}/flat/64.png">{{ tab.country }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_team_show', { 'id': tab.team.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_team_edit', { 'id': tab.team.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 
-                    </td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
 
     </div>
 {% endblock %}
