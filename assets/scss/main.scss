@@ -226,3 +226,41 @@ $heightCell : 80px;
     background-color: $bleu-clair;
   }
 }
+
+.team {
+  font-family: $catamaran;
+  font-size: 1.2rem;
+  th {
+    font-size: 1.6rem;
+  }
+  a {
+    width: 80px;
+    height: 40px;
+    font-size: 1.2rem;
+    &:hover {
+      color: $jaune;
+      font-style: unset;
+    }
+
+  }
+  button {
+    width: 180px;
+    height: 40px;
+    font-size: 1.2rem;
+    &:hover {
+      color: $jaune;
+      font-style: unset;
+    }
+  }
+  li {
+    text-decoration: none;
+  }
+  h1 {
+    font-family: $catamaran;
+    font-size: 2.5rem;
+    color: $violet;
+    font-weight: bold;
+  }
+
+
+}
