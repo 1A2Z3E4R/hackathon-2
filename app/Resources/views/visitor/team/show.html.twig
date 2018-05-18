@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="admin">
+        <div class="row">
+            <h1 class="my-3 mx-auto">Team</h1>
+        </div>
+
+
+        <table class="table-striped table-hover table-sm">
+            <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ team.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ team.name }}</td>
+            </tr>
+            <tr>
+                <th>Country</th>
+                <td>{{ team.country }}</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <a class="btn btn-outline-secondary mx-2 my-2" href="{{ path('team_index') }}">Back to the list</a>
+
+    </div>
+{% endblock %}

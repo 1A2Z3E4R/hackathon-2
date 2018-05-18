@@ -1,5 +1,10 @@
 {% extends 'base.html.twig' %}
 
+
+{% block header %}
+    {% include 'default/include/admin_navbar.html.twig' %}
+{% endblock %}
+
 {% block body %}
     {% include 'default/main/countDown.html.twig' %}
     {% include 'default/main/video.html.twig' %}

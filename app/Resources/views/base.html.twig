@@ -10,12 +10,17 @@
         <link href="https://fonts.googleapis.com/css?family=Catamaran:400,600" rel="stylesheet">
     </head>
     <body class="container-fluid">
+    {% block header %}
         {% include 'default/include/navbar.html.twig' %}
 
+    {% endblock %}
 
         {% block body %}{% endblock %}
 
+    {% block footer %}
         {% include 'default/include/footer.html.twig' %}
+    {% endblock %}
+
 
         <script src="{{ asset('build/manifest.js') }}"></script>
         <script src="{{ asset('build/app.js') }}"></script>

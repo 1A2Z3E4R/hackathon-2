@@ -20,4 +20,16 @@ class DefaultController extends Controller
         ]);
     }
 
+
+    /**
+     * @Route("/admin", name="admin_homepage")
+     */
+    public function AdminIndexAction(Request $request)
+    {
+        // replace this example code with whatever you need
+        return $this->render('default/admin_index.html.twig', [
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+        ]);
+    }
+
 }

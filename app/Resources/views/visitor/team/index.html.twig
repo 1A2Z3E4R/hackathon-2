@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="admin">
+        <div class="row">
+            <h1 class="my-3 mx-auto">Teams list</h1>
+        </div>
+
+        <table class="table-striped table-hover table-sm">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Country</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for tab in tabs %}
+            <tr>
+                <td><a href="{{ path('team_show', { 'id': tab.team.id }) }}">{{ tab.team.id }}</a></td>
+                <td>{{ tab.team.name }}</td>
+                <td><img src="http://www.countryflags.io/{{ tab.team.country }}/flat/64.png">{{ tab.country }}</td>
+                <td>
+                    <div class="row">
+                        <div class="col-4">
+                            <a class="btn btn-outline-secondary my-1 p-1"
+                               href="{{ path('team_show', { 'id': tab.team.id }) }}">show</a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+    </div>
+{% endblock %}

@@ -31,34 +31,8 @@ class TeamController extends Controller
             $tab[$key]['country']=Intl::getRegionBundle()->getCountryName($team->getCountry());
         }
 
-        return $this->render('team/index.html.twig', array(
+        return $this->render('visitor/team/index.html.twig', array(
             'tabs' => $tab,
-        ));
-    }
-
-    /**
-     * Creates a new team entity.
-     *
-     * @Route("/new", name="admin_team_new")
-     * @Method({"GET", "POST"})
-     */
-    public function newAction(Request $request)
-    {
-        $team = new Team();
-        $form = $this->createForm('AppBundle\Form\TeamType', $team);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($team);
-            $em->flush();
-
-            return $this->redirectToRoute('admin_team_show', array('id' => $team->getId()));
-        }
-
-        return $this->render('team/new.html.twig', array(
-            'team' => $team,
-            'form' => $form->createView(),
         ));
     }
 
@@ -70,7 +44,7 @@ class TeamController extends Controller
      */
     public function showAction(Team $team)
     {
-        return $this->render('team/show.html.twig', [
+        return $this->render('visitor/team/show.html.twig', [
             'team' => $team,
         ]);
     }
