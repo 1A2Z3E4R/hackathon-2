@@ -176,6 +176,10 @@ $widthGame : 350px;
 $heightCell : 80px;
 
 #tournament {
+  background-color: $gris;
+  background-image: url("https://asiangames2018.id/assets/dist/img/bg_section2.png");
+  background-position: top;
+  background-size: cover;
   input[type="number"] {
     width: 60px;
   }
@@ -207,13 +211,13 @@ $heightCell : 80px;
     min-height: $heightTournament;
   }
   .game {
-    border: 1px solid black;
-    border-radius: 8px;
+    border-radius: 5px;
     margin: auto auto;
     min-width: $widthGame;
+    padding-top: 5px;
 
     .team {
-      border: 1px solid black;
+      border: 1px solid rgba(0, 0, 0, 0.2);
 
       table.teamTab {
         margin: 0;
@@ -225,13 +229,11 @@ $heightCell : 80px;
         }
       }
       .teamName {
-        border: 1px solid black;
         vertical-align: middle;
 
       }
       .score {
         width: 20%;
-        border: 1px solid black;
         vertical-align: middle;
 
       }

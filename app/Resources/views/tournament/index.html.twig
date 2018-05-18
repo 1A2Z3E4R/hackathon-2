@@ -32,9 +32,9 @@
                                                     <td class="score">
 
                                                         {% if game.score1 is empty and game.team2 is not empty %}
-                                                        <input type="number" maxlength="1" name="score1" >
+                                                            <input type="number" maxlength="1" name="score1" >
                                                             {% else %}
-                                                                {{ game.score1 }}
+                                                                <h3><span class="badge badge-light">{{ game.score1 }}</span></h3>
                                                         {% endif %}
 
                                                     </td>
@@ -57,7 +57,7 @@
                                                         {% if game.score2 is empty and game.team2 is not empty %}
                                                             <input type="number" maxlength="1" name="score2" >
                                                         {% else %}
-                                                            {{ game.score2 }}
+                                                            <h3><span class="badge badge-light">{{ game.score2 }}</span></h3>
                                                         {% endif %}
 
                                                     </td>

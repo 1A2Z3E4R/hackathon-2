@@ -98,8 +98,6 @@ class TournamentController extends Controller
 
         $gameCible = $query->getResult();
         $gameCible = $gameCible[0];
-        var_dump($gameCible);
-        var_dump($game);
 
         if ($score1 > $score2) {
             $winner = 1;
