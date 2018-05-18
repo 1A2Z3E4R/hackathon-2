@@ -1,16 +1,16 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Team creation</h1>
+    <div class="admin">
+        <div class="row">
+            <h1 class="my-3 mx-auto">Team creation</h1>
+        </div>
 
-    {{ form_start(form) }}
+        {{ form_start(form) }}
         {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
+        <input class="btn btn-outline-secondary mx-2 my-2 " type="submit" value="Create"/>
+        {{ form_end(form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('admin_team_index') }}">Back to the list</a>
-        </li>
-    </ul>
+        <a class="btn btn-outline-secondary mx-2 my-2" href="{{ path('admin_team_index') }}">Back to the list</a>
+    </div>
 {% endblock %}

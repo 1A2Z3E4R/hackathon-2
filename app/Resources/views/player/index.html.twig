@@ -1,10 +1,13 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Players list</h1>
+    <div class="admin">
+        <div class="row">
+            <h1 class="my-3 mx-auto">Players list</h1>
+        </div>
 
-    <table>
-        <thead>
+        <table class="table-striped table-hover table-sm">
+            <thead>
             <tr>
                 <th>Id</th>
                 <th>Firstname</th>
@@ -12,26 +15,29 @@
                 <th>Avatar</th>
                 <th>Actions</th>
             </tr>
-        </thead>
-        <tbody>
-        {% for player in players %}
-            <tr>
-                <td><a href="{{ path('player_show', { 'id': player.id }) }}">{{ player.id }}</a></td>
-                <td>{{ player.firstName }}</td>
-                <td>{{ player.lastName }}</td>
-                <td>{{ player.avatar }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('player_show', { 'id': player.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('player_edit', { 'id': player.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+            {% for player in players %}
+                <tr>
+                    <td><a href="{{ path('admin_player_show', { 'id': player.id }) }}">{{ player.id }}</a></td>
+                    <td>{{ player.firstName }}</td>
+                    <td>{{ player.lastName }}</td>
+                    <td>{{ player.avatar }}</td>
+                    <td>
+                        <div class="row">
+                            <div class="col-4">
+                                <a class="btn btn-outline-secondary my-1 p-1"
+                                   href="{{ path('admin_player_show', { 'id': player.id }) }}">show</a>
+                            </div>
+                            <div class="col-6">
+                                <a class="btn btn-outline-secondary my-1 p-1"
+                                   href="{{ path('admin_player_edit', { 'id': player.id }) }}">edit</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}
