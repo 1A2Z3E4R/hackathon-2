@@ -31,10 +31,6 @@ class TeamController extends Controller
             $tab[$key]['country']=Intl::getRegionBundle()->getCountryName($team->getCountry());
         }
 
-
-        return $this->render('team/index.html.twig', [
-            'teams' => $teams,
-        ]);
         return $this->render('team/index.html.twig', array(
             'tabs' => $tab,
         ));
