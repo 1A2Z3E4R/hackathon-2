@@ -46,10 +46,8 @@ class GeneratorController extends Controller
         $games = $em->getRepository(Game::class)->findAll();
 
 
-        /*return $this->redirect('/admin/tournament');*/
-        return $this->render('/generator.html.twig', array(
-            'games' => $games,
-        ));
+        return $this->redirect('/admin/tournament');
+
     }
 
     /**

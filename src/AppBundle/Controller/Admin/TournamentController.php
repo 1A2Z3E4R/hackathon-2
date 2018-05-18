@@ -28,7 +28,6 @@ class TournamentController extends Controller
         $games = $em->getRepository('AppBundle:Game')->findAll();
         $firstCol = $this->seekFirstCol($games);
 
-
         return $this->render('tournament/index.html.twig', array(
             'games' => $games,
             'firstCol' => $firstCol,
@@ -59,8 +58,8 @@ class TournamentController extends Controller
     {
 
         $id = $request->request->get("id", "0");
-        $score1 = $request->request->get("score1", "0");
-        $score2 = $request->request->get("score2", "0");
+        $score1 = intval($request->request->get("score1", 0));
+        $score2 = intval($request->request->get("score2", 0));
 
         if ($score1 == $score2) {
             return $this->redirectToRoute('admin_tournament_index');
