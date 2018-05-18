@@ -85,14 +85,14 @@ table {
 
 #video {
   font-size: 1.2rem;
-  background-color: $bleu-vert;
-  color: $blanc;
+  background-color: $gris;
   h2 {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 50px;
     border-left: 3px solid $orange;
     padding-left: 5px;
+    color: $bleu-marine;
   }
 }
 
@@ -111,19 +111,18 @@ table {
   background-position: top;
   background-size: cover;
   height: 100vh;
-  background-color: $gris;
 }
 
 .container-header h2 {
   color: $bleu-marine;
   font-family: $catamaran;
-  font-size: 3rem;
+  font-size: 2rem;
   text-align: center;
 }
 
 .count {
   margin-top: 100px;
-  background-color: $blanc;
+  background-color: $bleu-vert;
   border-radius: 50%;
   box-shadow: 0px 0px 35px rgba(0, 0, 0, 0.3);
   width: 500px;
@@ -134,8 +133,9 @@ table {
   flex-direction: column;
   justify-content: center;
   h2 {
-    color: $orange;
+    color: $blanc;
     font-weight: bold;
+    font-size: 3rem;
   }
 }
 
