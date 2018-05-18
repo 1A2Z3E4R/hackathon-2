@@ -6,6 +6,8 @@ use AppBundle\Entity\Team;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Intl\Intl;
+
 
 /**
  * Team controller.
@@ -25,10 +27,16 @@ class TeamController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $teams = $em->getRepository('AppBundle:Team')->findAll();
+        $teams = $em->getRepository('AppBundle:Team')->findAll();
+        foreach ($teams as $key =>  $team) {
+            $tab[$key]['team']=$team;
+            $tab[$key]['country']=Intl::getRegionBundle()->getCountryName($team->getCountry());
+        }
 
         return $this->render('team/index.html.twig', array(
-            'teams' => $teams,
+            'tabs' => $tab,
         ));
+
     }
 
     /**
