@@ -40,6 +40,16 @@ footer {
   }
 }
 
+.email {
+  width: 200px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.navbar {
+  background-color: $blanc;
+}
+
 .container-navbar {
   .navbar-brand {
     color: $bleu-marine;
@@ -67,12 +77,23 @@ table {
   flex-direction: row;
   justify-content: center;
 }
+.align-center-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 #video {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   background-color: $bleu-vert;
-  border-bottom-right-radius: 200px;
   color: $blanc;
+  h2 {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    border-left: 3px solid $orange;
+    padding-left: 5px;
+  }
 }
 
 .strong {
@@ -86,16 +107,36 @@ table {
 }
 
 .container-header {
-  background-image: url("../../web/images/header.jpg");
-  background-position: center;
+  background-image: url("https://asiangames2018.id/assets/dist/img/bg_section2.png");
+  background-position: top;
   background-size: cover;
+  height: 100vh;
+  background-color: $gris;
 }
 
 .container-header h2 {
-  color: $violet;
+  color: $bleu-marine;
   font-family: $catamaran;
-  font-weight: bold;
-  font-size: 4rem;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.count {
+  margin-top: 100px;
+  background-color: $blanc;
+  border-radius: 50%;
+  box-shadow: 0px 0px 35px rgba(0, 0, 0, 0.3);
+  width: 500px;
+  height: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  h2 {
+    color: $orange;
+    font-weight: bold;
+  }
 }
 
 #partenaires {
@@ -106,7 +147,7 @@ table {
     h2 {
       margin-left: auto;
       margin-right: auto;
-      margin-bottom: 20px;
+      margin-bottom: 50px;
       border-left: 3px solid $orange;
       padding-left: 5px;
     }
