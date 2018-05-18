@@ -56,6 +56,9 @@ footer {
     color: $jaune;
   }
 }
+.container-navbar {
+  background-color: white;
+}
 
 table {
   @extend .table, .table-bordered;

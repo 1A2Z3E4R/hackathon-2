@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
-    <div class="container container-navbar">
+<nav class="navbar navbar-expand-lg fixed-top my-0 mx-0 px-0 py-0" id="mainNav">
+    <div class="container-fluid container-navbar">
         <img src="/images/logo.png" alt="logo" class="navbar-brand img-fluid" width="80">
         <a class="navbar-brand js-scroll-trigger" href="#page-top">NINJA VOLLEYBALL WORLD CUP 2018</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
@@ -9,13 +9,13 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="">Home</a>
+                    <a class="nav-link js-scroll-trigger" href="{{ path('homepage') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="">Match</a>
+                    <a class="nav-link js-scroll-trigger" href="{{ path('admin_tournament_index') }}">Match</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="">Team</a>
+                    <a class="nav-link js-scroll-trigger" href="{{ path('admin_team_index') }}">Team</a>
                 </li>
             </ul>
         </div>
